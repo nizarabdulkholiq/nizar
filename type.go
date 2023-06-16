@@ -6,11 +6,11 @@ type MahasiswaTag struct {
 	NIM           string `bson:"nim" json:"nim"`
 }
 type TagihanRegistrasi struct {
-	ID              int     `bson:"id,omitempty" json:"id,omitempty"`
-	NamaMahasiswa   string  `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
-	NIM             string  `bson:"nim" json:"nim"`
-	Semester        int     `bson:"semester" json:"semester"`
-	BiayaRegistrasi float64 `bson:"biaya_registrasi" json:"biaya_registrasi"`
+	ID              int    `bson:"id,omitempty" json:"id,omitempty"`
+	NamaMahasiswa   string `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
+	NIM             string `bson:"nim" json:"nim"`
+	Semester        string `bson:"semester" json:"semester"`
+	BiayaRegistrasi string `bson:"biaya_registrasi" json:"biaya_registrasi"`
 }
 type TagihanSPP struct {
 	ID            int     `bson:"id,omitempty" json:"id,omitempty"`
