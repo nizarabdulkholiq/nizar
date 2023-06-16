@@ -1,37 +1,41 @@
 package nizar
 
+import (
+	"go.mongodb.org/mongo-driver/bson/primitive"
+)
+
 type MahasiswaTag struct {
-	ID            int    `bson:"id,omitempty" json:"id,omitempty"`
-	NamaMahasiswa string `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
-	NIM           string `bson:"nim" json:"nim"`
+	ID            primitive.ObjectID `bson:"id,omitempty" json:"id,omitempty"`
+	NamaMahasiswa string             `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
+	NIM           string             `bson:"nim" json:"nim"`
 }
 type TagihanRegistrasi struct {
-	ID              int    `bson:"id,omitempty" json:"id,omitempty"`
-	NamaMahasiswa   string `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
-	NIM             string `bson:"nim" json:"nim"`
-	Semester        string `bson:"semester" json:"semester"`
-	BiayaRegistrasi string `bson:"biaya_registrasi" json:"biaya_registrasi"`
+	ID              primitive.ObjectID `bson:"id,omitempty" json:"id,omitempty"`
+	NamaMahasiswa   string             `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
+	NIM             string             `bson:"nim" json:"nim"`
+	Semester        string             `bson:"semester" json:"semester"`
+	BiayaRegistrasi string             `bson:"biaya_registrasi" json:"biaya_registrasi"`
 }
 type TagihanSPP struct {
-	ID            int     `bson:"id,omitempty" json:"id,omitempty"`
-	NamaMahasiswa string  `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
-	NIM           string  `bson:"nim" json:"nim"`
-	Semester      int     `bson:"semester" json:"semester"`
-	BiayaSPP      float64 `bson:"biaya_spp" json:"biaya_spp"`
+	ID            primitive.ObjectID `bson:"id,omitempty" json:"id,omitempty"`
+	NamaMahasiswa string             `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
+	NIM           string             `bson:"nim" json:"nim"`
+	Semester      string             `bson:"semester" json:"semester"`
+	BiayaSPP      string             `bson:"biaya_spp" json:"biaya_spp"`
 }
 type TagihanMakanan struct {
-	ID            int     `bson:"id,omitempty" json:"id,omitempty"`
-	NamaMahasiswa string  `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
-	NIM           string  `bson:"nim" json:"nim"`
-	Bulan         string  `bson:"bulan" json:"bulan"`
-	Tahun         int     `bson:"tahun" json:"tahun"`
-	BiayaMakanan  float64 `bson:"biaya_makanan" json:"biaya_makanan"`
+	ID            primitive.ObjectID `bson:"id,omitempty" json:"id,omitempty"`
+	NamaMahasiswa string             `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
+	NIM           string             `bson:"nim" json:"nim"`
+	Bulan         string             `bson:"bulan" json:"bulan"`
+	Tahun         int                `bson:"tahun" json:"tahun"`
+	BiayaMakanan  string             `bson:"biaya_makanan" json:"biaya_makanan"`
 }
 
 type TagihanPerpustakaan struct {
-	ID                int     `bson:"id,omitempty" json:"id,omitempty"`
-	NamaMahasiswa     string  `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
-	NIM               string  `bson:"nim" json:"nim"`
-	Tahun             int     `bson:"tahun" json:"tahun"`
-	BiayaPerpustakaan float64 `bson:"biaya_perpustakaan" json:"biaya_perpustakaan"`
+	ID                primitive.ObjectID `bson:"id,omitempty" json:"id,omitempty"`
+	NamaMahasiswa     string             `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
+	NIM               string             `bson:"nim" json:"nim"`
+	Tahun             int                `bson:"tahun" json:"tahun"`
+	BiayaPerpustakaan string             `bson:"biaya_perpustakaan" json:"biaya_perpustakaan"`
 }
