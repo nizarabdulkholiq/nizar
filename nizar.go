@@ -35,7 +35,7 @@ func InsertTagihanSPP(db string, tagihan TagihanSPP) (insertedID interface{}) {
 	return insertResult.InsertedID
 }
 func GetTagihanSPP(NamaMahasiswa string) (data []TagihanSPP) {
-	user := MongoConnect("tagihan").Collection("users")
+	user := MongoConnect("tagihan").Collection("NamaMahasiswa")
 	filter := bson.M{"NamaMahasiswa": NamaMahasiswa}
 	cursor, err := user.Find(context.TODO(), filter)
 	if err != nil {
