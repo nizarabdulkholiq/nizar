@@ -18,7 +18,7 @@ type TagihanRegistrasi struct {
 }
 type TagihanSPP struct {
 	ID            primitive.ObjectID `bson:"id,omitempty" json:"id,omitempty"`
-	NamaMahasiswa string             `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
+	NamaMahasiswa string             `bson:"namamahasiswa" json:"namamahasiswa"`
 	NIM           string             `bson:"nim" json:"nim"`
 	Semester      string             `bson:"semester" json:"semester"`
 	BiayaSPP      string             `bson:"biaya_spp" json:"biaya_spp"`

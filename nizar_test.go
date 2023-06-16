@@ -23,7 +23,7 @@ func TestInsertUser(t *testing.T) {
 }
 
 func TestGetTagihanUser(t *testing.T) {
-	NamaMahasiswa := "Nizar"
-	hiya := GetTagihanSPP(NamaMahasiswa)
+	semester := "dua"
+	hiya := GetTagihanSPP(semester)
 	fmt.Println(hiya)
 }
