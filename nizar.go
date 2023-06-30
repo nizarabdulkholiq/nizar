@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	
+
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -42,6 +42,13 @@ func InsertTagihanRegistrasi(db string, tagihanregis TagihanRegistrasi) (inserte
 	return insertResult.InsertedID
 }
 
+
+func InsertMahasiswa(db *mongo.Database, collect string, NamaMahasiswa string, NIM string) (InsertedID interface{}) {
+	var srt Mahasiswa
+	srt.NamaMahasiswa = NamaMahasiswa
+	srt.NIM = NIM
+	return InsertOneDoc(db, collect, srt)
+}
 func GetTagihanRegistrasi(stats string) (data []TagihanRegistrasi) {
 	user := MongoConnect("tagihan").Collection("tagihanregist")
 	filter := bson.M{"semester": stats}
@@ -67,10 +74,4 @@ func GetTagihanSPP(stats string) (data []TagihanSPP) {
 		fmt.Println(err)
 	}
 	return
-}
-func InsertMahasiswa(db *mongo.Database, collect string, NamaMahasiswa string, NIM string) (InsertedID interface{}) {
-	var srt Mahasiswa
-	srt.NamaMahasiswa = NamaMahasiswa
-	srt.NIM = NIM
-	return InsertOneDoc(db, collect, srt)
 }
