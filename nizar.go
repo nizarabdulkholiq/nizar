@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-
+	
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -27,19 +27,27 @@ func InsertOneDoc(db *mongo.Database, collection string, doc interface{}) (inser
 	}
 	return insertResult.InsertedID
 }
-func InsertTagihanSPP(db string, tagihan TagihanSPP) (insertedID interface{}) {
-	insertResult, err := MongoConnect(db).Collection("tagihan").InsertOne(context.TODO(), tagihan)
+func InsertTagihanSPP(db string, tagihanspp TagihanSPP) (insertedID interface{}) {
+	insertResult, err := MongoConnect(db).Collection("tagihanspp").InsertOne(context.TODO(), tagihanspp)
 	if err != nil {
-		fmt.Printf("Inserttagihan: %v\n", err)
+		fmt.Printf("InsertTagihanSPP: %v\n", err)
 	}
 	return insertResult.InsertedID
 }
-func GetTagihanSPP(hiya string) (data []TagihanSPP) {
-	user := MongoConnect("tagihan").Collection("tagihan")
-	filter := bson.M{"semester": hiya}
+func InsertTagihanRegistrasi(db string, tagihanregis TagihanRegistrasi) (insertedID interface{}) {
+	insertResult, err := MongoConnect(db).Collection("tagihanregis").InsertOne(context.TODO(), tagihanregis)
+	if err != nil {
+		fmt.Printf("InsertTagihanRegistrasi: %v\n", err)
+	}
+	return insertResult.InsertedID
+}
+
+func GetTagihanRegistrasi(stats string) (data []TagihanRegistrasi) {
+	user := MongoConnect("tagihan").Collection("tagihanregist")
+	filter := bson.M{"semester": stats}
 	cursor, err := user.Find(context.TODO(), filter)
 	if err != nil {
-		fmt.Println("GetNamanama :", err)
+		fmt.Println("GetTagihanRegistrasi :", err)
 	}
 	err = cursor.All(context.TODO(), &data)
 	if err != nil {
@@ -47,8 +55,21 @@ func GetTagihanSPP(hiya string) (data []TagihanSPP) {
 	}
 	return
 }
-func InsertMahaTag(db *mongo.Database, collect string, NamaMahasiswa string, NIM string) (InsertedID interface{}) {
-	var srt MahasiswaTag
+func GetTagihanSPP(stats string) (data []TagihanSPP) {
+	user := MongoConnect("tagihan").Collection("tagihanspp")
+	filter := bson.M{"semester": stats}
+	cursor, err := user.Find(context.TODO(), filter)
+	if err != nil {
+		fmt.Println("GetTagihanSPP :", err)
+	}
+	err = cursor.All(context.TODO(), &data)
+	if err != nil {
+		fmt.Println(err)
+	}
+	return
+}
+func InsertMahasiswa(db *mongo.Database, collect string, NamaMahasiswa string, NIM string) (InsertedID interface{}) {
+	var srt Mahasiswa
 	srt.NamaMahasiswa = NamaMahasiswa
 	srt.NIM = NIM
 	return InsertOneDoc(db, collect, srt)

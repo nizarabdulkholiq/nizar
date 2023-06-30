@@ -4,7 +4,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type MahasiswaTag struct {
+type Mahasiswa struct {
 	ID            primitive.ObjectID `bson:"id,omitempty" json:"id,omitempty"`
 	NamaMahasiswa string             `bson:"nama_mahasiswa" json:"nama_mahasiswa"`
 	NIM           string             `bson:"nim" json:"nim"`
