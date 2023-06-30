@@ -85,12 +85,12 @@ func TestInsertTagihanRegistrasi(t *testing.T) {
 // }
 
 func TestGetTagihanRegistrasi(t *testing.T) {
-	stats := "semester"
+	stats := "biaya_registrasi"
 	data := GetTagihanRegistrasi(stats)
 	fmt.Println(data)
 }
 func TestGetTagihanSPP(t *testing.T) {
-	stats := "catatan"
+	stats := "biaya_spp"
 	data := GetTagihanSPP(stats)
 	fmt.Println(data)
 }
