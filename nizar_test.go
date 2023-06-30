@@ -82,14 +82,14 @@ import (
 // 	return InsertOneDoc(db, collect, srt)
 // }
 
-func TestGetDataTagihanRegistrasi(t *testing.T) {
+func TestGetTagihanRegistrasi(t *testing.T) {
 	stats := "semester"
-	data := GetDataTagihanRegistrasi(stats)
+	data := GetTagihanRegistrasi(stats)
 	fmt.Println(data)
 }
-func TestGetDataTagihanSPP(t *testing.T) {
+func TestGetTagihanSPP(t *testing.T) {
 	stats := "catatan"
-	data := GetDataTagihanSPP(stats)
+	data := GetTagihanSPP(stats)
 	fmt.Println(data)
 }
 
